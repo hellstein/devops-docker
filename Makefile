@@ -29,4 +29,4 @@ clean-deployment: $(REPO).zip
 deploy:
 	docker tag $(OWNER)/$(REPO)-$(ARCH) $(OWNER)/$(REPO)-$(ARCH):$(TAG)
 	docker login -u $(USER) -p $(PASS)
-	docker push $(OWNER)/$(REPO):$(TAG)
+	docker push $(OWNER)/$(REPO)-$(ARCH):$(TAG)

@@ -13,15 +13,15 @@ branches:
     - develop
     - "/^\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
 install: true
-script: "make mk-image $ARCH"
+script: "make mk-image ARCH=$ARCH"
 deploy:
   - provider: script
-    script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$(ARCH) TAG=$TRAVIS_BRANCH
+    script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$ARCH TAG=$TRAVIS_BRANCH
     on:
       all_branches: true
       condition: "$TRAVIS_BRANCH =~ ^master|develop$"
   - provider: script
-    script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$(ARCH) TAG=$TRAVIS_TAG
+    script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$ARCH TAG=$TRAVIS_TAG
     on:
       tags: true
       all_branches: true
