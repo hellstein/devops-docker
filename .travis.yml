@@ -1,27 +1,45 @@
 language: generic
 sudo: required
 dist: trusty
+
 env:
   matrix:
     - ARCH=armv6
     - ARCH=x86
+
 services:
   - docker
+
 branches:
   only:
     - master
     - develop
     - "/^\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+
 install: true
-script: "make mk-image ARCH=$ARCH"
+
+script: 
+  - make mk-image ARCH=$ARCH
+  - make mk-deployment
+
 deploy:
   - provider: script
     script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$ARCH TAG=$TRAVIS_BRANCH
     on:
       all_branches: true
       condition: "$TRAVIS_BRANCH =~ ^master|develop$"
+  
   - provider: script
     script: make deploy USER=$DOCKER_USER PASS=$DOCKER_PASS ARCH=$ARCH TAG=$TRAVIS_TAG
+    on:
+      tags: true
+      all_branches: true
+  
+  - provider: release
+    prelease: true
+    skip_cleanup: true 
+    file_glob: true
+    file: ${REPO}.zip
     on:
       tags: true
       all_branches: true
