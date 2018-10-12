@@ -24,7 +24,8 @@ clean-image:
 
 .PHONY: mk-deployment clean-deployment
 mk-deployment: $(DEPLOYMENT)
-	zip -r -j $(REPO).zip $(DEPLOYMENT) 
+	sed -ie s+VERSION=+VERSION=$(VERSION)+g $(DEPLOYMENT)/temp.env
+	zip -r -j $(REPO)-$(VERSION).zip $(DEPLOYMENT) 
 
 clean-deployment: $(REPO).zip
 	rm $(REPO).zip
