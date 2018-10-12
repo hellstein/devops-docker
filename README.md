@@ -1,66 +1,88 @@
-# docker example 
+<p align="center">
+  <img width="250" src="LOGO">
+</p>
 
-This is a template for docker image and its deplyment(using docker compose) for armv6 and x86. 
-- Dockerfile template for image.
-- Docker compose file template for deployment.
-- gitbook template for github page.
-- travis file template for CI.
+<h1 align="center"> Project Title </h1>
+<p align="center">
+  <b >One Paragraph of project description goes here</b>
+</p>
+<br>
 
-You can use this project to quick start your docker image project. 
+[![GitHub release](https://img.shields.io/github/release/OWNER/REPO.svg)](https://github.com/OWNER/REPO/releases)
+![Github All Releases](https://img.shields.io/github/downloads/OWNER/REPO/total.svg)
+x86: [![Docker Pulls](https://img.shields.io/docker/pulls/OWNER/REPO-x86.svg)](https://hub.docker.com/r/OWNER/REPO-x86/tags/)
+armv6: [![Docker Pulls](https://img.shields.io/docker/pulls/OWNER/REPO-x86.svg)](https://hub.docker.com/r/OWNER/REPO-x86/tags/)
 
-By using travis CI, Work flow works like below:
-- Push code to remote branch develop or master :
-    - Build image
-    - Push the image to docker hub and tag it with branch name
-- Push a tag to remote
-    - Build image
-    - Push the image to docker hub and tag it with the git tag
-    - Build the deployment
-    - Publish the tag to a prerelease and push the deployment to this prerelease
+![Travis (.org) branch](https://img.shields.io/travis/OWNER/REPO/BRANCH.svg)
+![GitHub](https://img.shields.io/github/license/OWNER/REPO.svg)
 
-# How to use
+# Deployment
 
-### Download the template from release.
-- Go to the release page ([here](https://github.com/ChineseTeapot/docker-example/releases))
-- Select the latest release and click to download.
+As a user, how to deploy the project
 
-### Unzip and check the md5
-```bash
-$ unzip docker-example-[version].zip
-$ cd docker-example/
-$ md5sum -c docker-example-[version].md5
+# Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
 ```
 
-### Config for new project
-- rename the directory.
-    ```bash
-    $ mv docker-example [project]
-    $ cd [project]/
-    $ rm docker-example-[version].md5
-    ```
+### Installing
 
-- init git 
-    ```bash
-    $ cd [project]/
-    $ git init
-    $ git add -A
-    $ git commit -m "add docker image template"
-    $ git remote add origin https://github.com/OWNER/REPO.git
-    $ git push -u origin master
-    ```
-    Replace the key words `OWNER` and `REPO` with your github user and project.
+How to install package
 
-- specify the repo
-    ```bash
-    $ vim Makefile
-    ```
-    Modify the value of variables `OWNER` and `REPO` to your github user and project.
 
-- specify the account info
+### Running the tests
 
-  gihub account and dockerhub account
+Explain how to run the automated tests for this system
 
-### Write the image dockerfile
+```
+Give an example
+```
+### Documentation
+Document list of the project
 
-### Write the image deployment
+* user manual
+* API 
+* Requirement design
+
+
+### Build
+
+How to build
+
+### Built With
+
+Tools you used for building this project
+
+# Logistics
+
+### Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/OWNER/REPO/blob/master/.github/CONTRIBUTING.md) for contributing.
+For details on our [code of conduct](https://github.com/OWNER/REPO/blob/master/.github/CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+
+### Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository
+
+### Authors
+
+* **AUTHOR** - *Initial work* - [AUTHOR](https://github.com/AUTHOR)
+
+See also the list of [contributors](https://github.com/OWNER/REPO/graphs/contributors) who participated in this project.
+
+### Acknowledgments
+
+See [Acknowledgments](https://github.com/OWNER/REPO/blob/master/.github/ACKNOWLEDGMENTS.md)
+
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/OWNER/REPO/blob/master/LICENSE.md) file for details
 
