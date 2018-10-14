@@ -24,7 +24,7 @@ clean-image:
 
 .PHONY: mk-deployment clean-deployment
 mk-deployment: $(DEPLOYMENT)
-	sed -ie s+VERSION=.*+VERSION=$(VERSION)+g $(DEPLOYMENT)/temp.env
+	sed -i s+VERSION=.*+VERSION=$(VERSION)+g $(DEPLOYMENT)/temp.env
 	mkdir imageAPI 
 	cp $(DEPLOYMENT)/docker-compose.yml $(DEPLOYMENT)/temp.env $(DEPLOYMENT)/Makefile imageAPI/
 	zip -r $(REPO)-$(VERSION).zip imageAPI
