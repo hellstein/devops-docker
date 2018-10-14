@@ -1,6 +1,6 @@
 version: ''
 services:
   service_name:
-    image: ${ORG}/${REPO}:${VERSION}
+    image: ${OWNER}/${REPO}:${VERSION}
 
     command: 

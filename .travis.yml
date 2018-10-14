@@ -35,11 +35,11 @@ deploy:
       tags: true
       all_branches: true
   
-  - provider: release
-    prelease: true
+  - provider: releases
+    prerelease: true
     skip_cleanup: true 
     file_glob: true
-    file: ${REPO}-$TRAVIS_TAG.zip
+    file: "./*.zip" 
     on:
       tags: true
       all_branches: true
