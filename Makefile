@@ -23,12 +23,25 @@ clean-image:
 
 
 .PHONY: mk-deployment clean-deployment
-mk-deployment: $(DEPLOYMENT)
-	sed -i s+VERSION=.*+VERSION=$(VERSION)+g $(DEPLOYMENT)/temp.env
+
+DEPLOYMENT_x86=$(DEPLOYMENT)/imageAPI-x86
+DEPLOYMENT_armv6=$(DEPLOYMENT)/imageAPI-armv6
+
+mk-deployment-x86: $(DEPLOYMENT_x86)
+	sed -i s+VERSION=latest.*+VERSION=$(VERSION)+g $(DEPLOYMENT_x86)/temp.env
 	mkdir imageAPI 
-	cp $(DEPLOYMENT)/docker-compose.yml $(DEPLOYMENT)/temp.env $(DEPLOYMENT)/Makefile imageAPI/
+	cp $(DEPLOYMENT_x86)/docker-compose.yml $(DEPLOYMENT_x86)/temp.env $(DEPLOYMENT_x86)/Makefile imageAPI/
 	zip -r $(REPO)-$(VERSION).zip imageAPI
 	rm -rf imageAPI
+
+mk-deployment-armv6: $(DEPLOYMENT_armv6)
+	sed -i s+VERSION=latest.*+VERSION=$(VERSION)+g $(DEPLOYMENT_armv6)/temp.env
+	mkdir imageAPI 
+	cp $(DEPLOYMENT_armv6)/docker-compose.yml $(DEPLOYMENT_armv6)/temp.env $(DEPLOYMENT_armv6)/Makefile imageAPI/
+	zip -r $(REPO)-$(VERSION).zip imageAPI
+	rm -rf imageAPI
+
+mk-deployment: mk-deployment-x86 mk-deployment-armv6
 
 clean-deployment: $(REPO)-$(VERSION).zip
 	rm $(REPO)-$(VERSION).zip
