@@ -1,0 +1,9 @@
+#!/bin/bash
+OWNER=$1
+REPO=$1
+
+for file in deployment/temp.env Makefile README.md
+do
+    sed -i "s/[OWNER]/$OWNER/g" $file
+    sed -i "s/[REPO]/$REPO/g" $file
+done
