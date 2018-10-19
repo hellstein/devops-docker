@@ -16,49 +16,8 @@ armv6: [![Docker Pulls](https://img.shields.io/docker/pulls/[OWNER]/[REPO]-x86.s
 ![Travis (.org) branch](https://img.shields.io/travis/[OWNER]/[REPO]/BRANCH.svg)
 ![GitHub](https://img.shields.io/github/license/[OWNER]/[REPO].svg)
 
-# Deployment
-
-As a user, how to deploy the project
-
-# Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-How to install package
-
-
-### Running the tests
-
-Explain how to run the automated tests for this system
-
-```
-Give an example
-```
-### Documentation
-Document list of the project
-
-* user manual
-* API 
-* Requirement design
-
-
-### Build
-
-How to build
-
-### Built With
-
-Tools you used for building this project
+# Manual
+More details got to the github page.
 
 # Logistics
 
