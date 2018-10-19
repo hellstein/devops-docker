@@ -2,7 +2,7 @@
 OWNER=$1
 REPO=$2
 
-for file in deployment/imageAPI-x86/temp.env deployment/imageAPI-armv6/temp.env Makefile README.md
+for file in deployment/imageAPI-x86/temp.env deployment/imageAPI-armv6/temp.env Makefile README.md gitbook/README.md gitbook/usage/DEPLOYMENT.md
 do
     sed -i "s/\[OWNER\]/$OWNER/g" $file
     sed -i "s/\[REPO\]/$REPO/g" $file
