@@ -43,8 +43,8 @@ mk-deployment-armv6: $(DEPLOYMENT_armv6)
 
 mk-deployment: mk-deployment-x86 mk-deployment-armv6
 
-clean-deployment: $(REPO)-$(VERSION).zip
-	rm $(REPO)-$(VERSION).zip
+clean-deployment: $(REPO)-*-$(VERSION).zip
+	rm $(REPO)-*-$(VERSION).zip
 
 
 .PHONY: pushtohub

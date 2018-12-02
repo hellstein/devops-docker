@@ -2,8 +2,14 @@
 OWNER=$1
 REPO=$2
 
-for file in deployment/imageAPI-x86/temp.env deployment/imageAPI-armv6/temp.env Makefile README.md gitbook/README.md gitbook/usage/DEPLOYMENT.md
+for file in deployment/imageAPI-x86/temp.env deployment/imageAPI-armv6/temp.env
 do
-    sed -i "s/\[OWNER\]/$OWNER/g" $file
-    sed -i "s/\[REPO\]/$REPO/g" $file
+    sed -i "s/OWNER=.*/OWNER=${OWNER}/g" $file
+    sed -i "s/REPO=.*/REPO=${REPO}/g" $file
 done
+
+sed -i "s/OWNER =.*/OWNER = ${OWNER}/g" Makefile 
+sed -i "s/REPO =.*/REPO = ${REPO}/g" Makefile
+
+# OWNER and REPO in below files are not replaced
+# README.md gitbook/README.md gitbook/usage/DEPLOYMENT.md
