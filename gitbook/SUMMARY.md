@@ -2,9 +2,16 @@
 
 * [Introduction](README.md)
 
-### Overview 
-* [Topology](usage/TOPOLOGY.md)
-* [Dependency](usage/DEPENDENCY.md)
+### Quick Start 
+* [Prerequisite](qs/prerequisite.md)
+* [Deployment](qs/deployment.md)
 
-### Deployment
-* [Deployment](usage/DEPLOYMENT.md)
+### For Developer
+* [How to set dev environment](dev/setdevenv.md)
+* [How to build locally](dev/localbuild.md)
+* [How to perfrom CI build](dev/cibuild.md)
+
+### Contribution
+* [How to contribute](contribution/contribution.md)
+* [FAQ](contribution/faq.md)
+
