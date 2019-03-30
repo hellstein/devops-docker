@@ -1,0 +1,21 @@
+language: generic
+sudo: required
+dist: trusty
+branches:
+  only:
+  - "/^\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+
+install: true
+script:
+- make build VERSION=$TRAVIS_TAG
+deploy:
+- provider: releases
+  prerelease: true
+  skip_cleanup: true
+  file_glob: true
+  file: "./*.zip"
+  on:
+    tags: true
+    all_branches: true
+  api_key:
+    secure: PcDhPjWzKWd2rlatSporbaFmrrhlrV9mJswU6er99O9GtG9mo6uz2gOVy4tD1unLwonzhVQyedjZUNO+TSxhm1OzlCJByx8CGGSBsmw3bY+HFHLAAB5tDTq4vdMfufYgfT9OElLpg6bCe4YgrY8ckR4IIrcPUM+fYQSqHVLQn+LEeZRv6ekt+OgqRlfpOGeTo2dndGlqsU1nqCRODgileShHp5mTV3Zgfax8ftWwOLH29KSNjcat2R81LJONcSSEkagefFUa6j6BA1LkQm22weDctLaZY3jt+udqXY9iLD+NOTiLvkLoCbHL/29Js7B0NlnO/6Q0lik9OMDYsEsDY+uOLPKFUrnhGnd5fsIS0FaWeJeW07l7tWRVuEA5aGTHadyoFw6Mc6HhIIhB0rzlCioIUQR0odyQb9oI+0Vraa/b0oRoBrjKh2SuYgcJZ5D2o+A9u6PoCtm+SqV4hN6uficePwP2HrBIdCl4bHNQaKPiheDUZShlRS87YB/TN+R3wt7pIXaIvkh8dIlq/vd8f7UFcVe28H7I1gix4eQcyfWOmDZbZ1KpG4On3XTvZQLR4aXzzmzYKz5J7vwpzY+hv1ON8IahU8Fa5KOGadB6/u366hoIZMkSFCuVuwEnCzyEfIvhum740f4gRWFUOSLmmNoAxPGCxtlCq/2otEqRXVY=
