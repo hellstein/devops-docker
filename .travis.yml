@@ -4,7 +4,6 @@ dist: trusty
 branches:
   only:
   - "/^\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
-
 install: true
 script:
 - make build VERSION=$TRAVIS_TAG
@@ -18,4 +17,4 @@ deploy:
     tags: true
     all_branches: true
   api_key:
-    secure: PcDhPjWzKWd2rlatSporbaFmrrhlrV9mJswU6er99O9GtG9mo6uz2gOVy4tD1unLwonzhVQyedjZUNO+TSxhm1OzlCJByx8CGGSBsmw3bY+HFHLAAB5tDTq4vdMfufYgfT9OElLpg6bCe4YgrY8ckR4IIrcPUM+fYQSqHVLQn+LEeZRv6ekt+OgqRlfpOGeTo2dndGlqsU1nqCRODgileShHp5mTV3Zgfax8ftWwOLH29KSNjcat2R81LJONcSSEkagefFUa6j6BA1LkQm22weDctLaZY3jt+udqXY9iLD+NOTiLvkLoCbHL/29Js7B0NlnO/6Q0lik9OMDYsEsDY+uOLPKFUrnhGnd5fsIS0FaWeJeW07l7tWRVuEA5aGTHadyoFw6Mc6HhIIhB0rzlCioIUQR0odyQb9oI+0Vraa/b0oRoBrjKh2SuYgcJZ5D2o+A9u6PoCtm+SqV4hN6uficePwP2HrBIdCl4bHNQaKPiheDUZShlRS87YB/TN+R3wt7pIXaIvkh8dIlq/vd8f7UFcVe28H7I1gix4eQcyfWOmDZbZ1KpG4On3XTvZQLR4aXzzmzYKz5J7vwpzY+hv1ON8IahU8Fa5KOGadB6/u366hoIZMkSFCuVuwEnCzyEfIvhum740f4gRWFUOSLmmNoAxPGCxtlCq/2otEqRXVY=
+    secure: bOaoJIWQzT5Vd2WyIkSNM3oBDnZM27WRnIsLLUTp4XscQ3G4PGwZ6OfpjvIGb9zXbv3uLSQ63A1NiulVVryMZWSVDr0awzxcYjY1p8hMztuav2CPYUOgkTWtuWAsIbsNOFw+A3dsWfCHJs+jOuIiSnD21ic8ppcjyaag43cfrJYV1ERLP1PLqC2Sk1GEoJi9NpbcmE7jLr1VDec1PJ5NENt7Ot68+a218nSCMyGZFQ67lNDgcxKF+53xMEJXZ4lxmqsOklhUqmhLIn72BuzgrNcLo7Stc/sBHqKqeJSheWZ1qWEfcxcKzlTaW3uJwjtAey+01FU2QeI8dgLzXa0dKH9/a5MC5c5isqjBpKgBzlWl4hHvOxWV+ElpJg6UNwVwjzSReTNscFdOxiI5lgcZ2H43kRYjS+y+SkGPmtyt7d1NXUjPu3SNl8LNQwUtb8w6cm74B5+Rd2ME9ADNI8EyDJL27I/q7MaZ8egcaGJ2duW9zMNJ+2KMhg6M2RLsh+SAz7ya68KlsFqTHUfbIu0IszsTVfF1TJ8CXhhNCpknQ8dhS5yu9E2RermOmtwDAlbzzLzEZr7kovFasUIGzK7eBuatJ+Ph7Vo28f1birQ1mpcRqJOJwzlWG04b+5ZXc4HzcdDmCH4G+TM51S4gSw9TasuY2XuAhLeRIepoULva/sI=
